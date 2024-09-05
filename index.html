@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Celluloid Archive</title>
+    <style>
+        /* Import a pixelated font */
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            font-family: 'Press Start 2P', cursive; /* Pixelated font */
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+
+        header {
+            background-color: transparent;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgba(85, 85, 85, 0.8);
+        }
+
+        nav a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: rgba(119, 119, 119, 0.8);
+        }
+
+        main {
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .movie-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Maintain 3 columns */
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .movie-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem; /* Reduced padding to make the card smaller */
+            border-radius: 10px;
+            transition: transform 0.3s;
+            width: 90%; /* Reduced the width of the movie cards */
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Reduced the size of the movie poster */
+        .movie-poster {
+            width: 75%; /* Adjust the percentage as needed */
+            height: auto;
+            border-radius: 10px;
+            margin: 0 auto; /* Center the image */
+        }
+
+        .movie-title {
+            font-size: 1rem; /* Slightly reduced title font size */
+            margin: 10px 0;
+        }
+
+        .rating {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .star {
+            color: gold;
+            font-size: 1.5rem;
+            margin: 0 5px;
+        }
+
+        .release-date {
+            font-size: 0.8rem; /* Reduced font size for release date */
+        }
+
+        .search-bar {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            width: 50%;
+            border-radius: 20px;
+            border: none;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 20px;
+            border: none;
+            background-color: gold;
+            color: black;
+            cursor: pointer;
+        }
+
+        .filter-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .filter-section select {
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            background-color: #555;
+            color: white;
+        }
+
+        /* Retaining background image */
+        body::before {
+            content: '';
+            background-image: url("landing.jpg"); /* Ensure this path matches your actual image file location */
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Keep it behind everything else */
+            opacity: 0.9; /* Slight opacity for blending */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Celluloid Archive</h1> <!-- Changed the main heading -->
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Top Rated</a>
+        <a href="#">Trending</a>
+        <a href="#">Genres</a>
+    </nav>
+
+    <main>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for movies...">
+            <button>Search</button>
+        </div>
+
+        <div class="filter-section">
+            <label for="genre">Filter by Genre:</label>
+            <select id="genre">
+                <option value="all">All</option>
+                <option value="action">Action</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+                <option value="horror">Horror</option>
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="animation">Animation</option>
+                <option value="thriller">Thriller</option>
+                <option value="documentary">Documentary</option>
+                <option value="romance">Romance</option>
+            </select>
+        </div>
+
+        <h2>Top Ranked Movies</h2>
+        <div class="movie-list">
+            <!-- Sample movie cards -->
+            <div class="movie-card">
+                <img src="intern movie poster.jpg" alt="Movie Poster" class="movie-poster">
+                <h3 class="movie-title">The Intern</h3>
+                <div class="rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">☆</span>
+                </div>
+                <p class="release-date">25 September 2015</p> <!-- Reduced font size -->
+            </div>
+            <div class="movie-card">
+                <img src="devil wears prada poster.jpg" alt="Movie Poster" class="movie-poster">
+                <h3 class="movie-title">The Devil Wears Prada</h3>
+                <div class="rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">☆</span>
+                    <span class="star">☆</span>
+                </div>
+                <p class="release-date">30 June 2006</p> <!-- Reduced font size -->
+            </div>
+            <div class="movie-card"> <!-- Added a third movie -->
+                <img src="shopaholic.jpg" alt="Movie Poster" class="movie-poster">
+                <h3 class="movie-title">Confessions of a Shopaholic</h3>
+                <div class="rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">☆</span>
+                </div>
+                <p class="release-date">13 February 2009</p> <!-- Reduced font size -->
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Celluloid Archive</p> <!-- Updated footer to match new site name -->
+    </footer>
+
+</body>
+</html>
